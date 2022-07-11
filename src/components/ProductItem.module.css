@@ -1,0 +1,28 @@
+.myProduct {
+    display: flex;
+    align-items: center;
+}
+
+.myProductButton {
+    margin-left: auto;
+    flex: 1 1 30%;
+}
+
+.myProductId,
+.myProductName,
+.myProductPrice {
+    padding: 20px;
+    flex: 1 1 30%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #333333;
+}
+
+.discountedPrice {
+    margin-left: 20px
+}
+
+.oldPrice {
+    text-decoration: line-through;
+}

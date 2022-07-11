@@ -1,0 +1,29 @@
+.statistic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.statisticTitle {
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    color: #333;
+}
+
+.statisticCount,
+.statisticPrice {
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #333;
+    align-self: flex-start;
+}
+
+.oldPrice {
+    text-decoration: line-through;
+}

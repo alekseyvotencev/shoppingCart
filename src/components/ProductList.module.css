@@ -1,0 +1,22 @@
+.productsTitle {
+    margin: 0;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.productsRow {
+    display: flex;
+}
+
+.productsRow_heading {
+    padding: 20px;
+    flex: 1 1 30%;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #B0B0B0;
+}
+
+.productsTable {
+    background-color: #FFF;
+}

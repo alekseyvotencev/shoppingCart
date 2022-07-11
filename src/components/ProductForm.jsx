@@ -21,18 +21,21 @@ const ProductForm = ({ create }) => {
                 onChange={event => setProduct({ ...product, id: event.target.value })}
                 type="text"
                 placeholder="Введите ID товара"
+                className={classes.myFormInput}
             />
             <MyInput
                 value={product.name}
                 onChange={event => setProduct({ ...product, name: event.target.value })}
                 type="text"
                 placeholder="Введите название товара"
+                className={classes.myFormInput}
             />
             <MyInput
                 value={product.price}
                 onChange={event => setProduct({ ...product, price: event.target.value })}
                 type="number"
                 placeholder="Введите цену товара"
+                className={classes.myFormInput}
             />
             <MyButton onClick={addNewProduct}>Добавить</MyButton>
         </form>
