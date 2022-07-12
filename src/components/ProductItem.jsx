@@ -15,10 +15,10 @@ const ProductItem = (props) => {
                 </div>
                 <div className={classes.myProductPrice}>
                     <span className={classes.oldPrice}>
-                        {props.product.price} &#8381;
+                        {props.product.price} р.;
                     </span>
                     <span className={classes.discountedPrice}>
-                        {(props.product.price * (1 - props.discount.value / 100)).toFixed(2)} &#8381;
+                        {(props.product.price * (1 - props.discount.value / 100)).toFixed(2)} р.
                     </span>
                 </div>
                 <div className={classes.myProductButton}>
@@ -41,7 +41,7 @@ const ProductItem = (props) => {
             </div>
             <div className={classes.myProductPrice}>
                 <span>
-                    {props.product.price} &#8381;
+                    {props.product.price} р.
                 </span>
             </div>
             <div className={classes.myProductButton}>
