@@ -1,6 +1,6 @@
-import React from 'react'
-import MyButton from '../UI/button/MyButton'
-import classes from './modules/ProductItem.module.css'
+import React from 'react';
+import MyButton from '../UI/button/MyButton';
+import classes from './modules/ProductItem.module.css';
 
 const ProductItem = (props) => {
 

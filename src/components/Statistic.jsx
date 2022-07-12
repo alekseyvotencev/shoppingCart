@@ -1,6 +1,6 @@
-import React from 'react'
-import MyButton from '../UI/button/MyButton'
-import classes from './modules/Statistic.module.css'
+import React from 'react';
+import MyButton from '../UI/button/MyButton';
+import classes from './modules/Statistic.module.css';
 
 const Statistic = ({ products, title, setVisible, discount }) => {
 

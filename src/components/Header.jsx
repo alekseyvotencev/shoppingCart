@@ -1,7 +1,7 @@
-import React from 'react'
-import MyButton from '../UI/button/MyButton'
-import DiscountForm from './DiscountForm'
-import logo from '../img/shopping-cart.png'
+import React from 'react';
+import MyButton from '../UI/button/MyButton';
+import DiscountForm from './DiscountForm';
+import logo from '../img/shopping-cart.png';
 
 const Header = ({ discount, setDiscount, setModalNewProduct, setModalStatistic }) => {
     return (

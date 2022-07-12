@@ -1,7 +1,7 @@
-import React from 'react'
-import ProductItem from './ProductItem'
-import classes from './modules/ProductList.module.css'
-import empty from '../img/empty.png'
+import React from 'react';
+import ProductItem from './ProductItem';
+import classes from './modules/ProductList.module.css';
+import empty from '../img/empty.png';
 
 const ProductList = ({ products, title, remove, discount }) => {
 

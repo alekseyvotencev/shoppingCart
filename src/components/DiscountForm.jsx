@@ -1,6 +1,6 @@
-import React from 'react'
-import MyButton from '../UI/button/MyButton'
-import classes from './modules/DiscountForm.module.css'
+import React from 'react';
+import MyButton from '../UI/button/MyButton';
+import classes from './modules/DiscountForm.module.css';
 
 const DiscountForm = ({ discount, setDiscount }) => {
 
