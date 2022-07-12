@@ -25,3 +25,9 @@
 .productsTable {
     background-color: #FFF;
 }
+
+.empty {
+    width: 380px;
+    display: block;
+    margin: 0 auto;
+}

@@ -1,14 +1,19 @@
 import React from 'react'
 import ProductItem from './ProductItem'
 import classes from './modules/ProductList.module.css';
+import empty from '../img/empty.png'
 
 const ProductList = ({ products, title, remove, discount }) => {
 
     if (!products.length) {
         return (
-            <h1 style={{ textAlign: 'center' }}>
-                Список пуст!
-            </h1>
+            <div>
+                <h1 className={classes.productsTitle}>
+                    Список пуст!
+                </h1>
+                <img src={empty} alt="Поиск не дал результатов" className={classes.empty} />
+
+            </div>
         )
     }
 
