@@ -3,10 +3,8 @@ import './styles/App.css';
 import ProductList from "./components/ProductList";
 import ProductForm from "./components/ProductForm";
 import MyModal from "./UI/modal/MyModal";
-import MyButton from "./UI/button/MyButton";
-import logo from './img/shopping-cart.png'
 import Statistic from "./components/Statistic";
-import DiscountForm from "./components/DiscountForm";
+import Header from "./components/Header";
 
 function App() {
 
@@ -31,27 +29,14 @@ function App() {
 
   return (
     <div className="App">
-      <div className="header">
-        <div className="container">
-          <img src={logo} alt="Логотип" className="header__logo" />
-          <DiscountForm discount={discount} setDiscount={setDiscount} />
-          <MyButton onClick={() => setModalNewProduct(true)} className="header__button">
-            Добавить товар
-          </MyButton>
-          <MyButton onClick={() => setModalStatistic(true)}>
-            Статистика
-          </MyButton>
-        </div>
-      </div>
+      <Header discount={discount} setDiscount={setDiscount} setModalNewProduct={setModalNewProduct} setModalStatistic={setModalStatistic} />
       <MyModal visible={modalNewProduct} setVisible={setModalNewProduct}>
         <ProductForm create={createProduct} />
       </MyModal>
       <MyModal visible={modalStatistic} setVisible={setModalStatistic}>
         <Statistic products={products} title="Статистика" setVisible={setModalStatistic} discount={discount} />
       </MyModal>
-      <div className="container">
-        <ProductList remove={removeProduct} products={products} title="Список товаров" discount={discount} />
-      </div>
+      <ProductList remove={removeProduct} products={products} title="Список товаров" discount={discount} />
     </div>
   );
 }

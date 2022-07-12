@@ -1,11 +1,10 @@
 import React from 'react'
 import MyButton from '../UI/button/MyButton'
-import classes from './ProductItem.module.css'
+import classes from './modules/ProductItem.module.css'
 
 const ProductItem = (props) => {
 
     if (props.discount.isSet) {
-        console.log('скидка')
         return (
             <div className={classes.myProduct}>
                 <div className={classes.myProductId}>
@@ -16,10 +15,10 @@ const ProductItem = (props) => {
                 </div>
                 <div className={classes.myProductPrice}>
                     <span className={classes.oldPrice}>
-                        {props.product.price} рублей
+                        {props.product.price} &#8381;
                     </span>
                     <span className={classes.discountedPrice}>
-                        {props.product.price * (1 - props.discount.value / 100)} рублей
+                        {(props.product.price * (1 - props.discount.value / 100)).toFixed(2)} &#8381;
                     </span>
                 </div>
                 <div className={classes.myProductButton}>
@@ -42,7 +41,7 @@ const ProductItem = (props) => {
             </div>
             <div className={classes.myProductPrice}>
                 <span>
-                    {props.product.price} рублей
+                    {props.product.price} &#8381;
                 </span>
             </div>
             <div className={classes.myProductButton}>

@@ -1,12 +1,14 @@
 import React from 'react'
 import MyButton from '../UI/button/MyButton'
+import classes from './modules/DiscountForm.module.css'
 
 const DiscountForm = ({ discount, setDiscount }) => {
 
     return (
-        <form>
-            <label htmlFor="sale">Скидка</label>
+        <form className={classes.discountForm}>
+            <label htmlFor="sale" className={classes.discountLabel}>Скидка:</label>
             <input
+                className={classes.discountInput}
                 value={discount.value}
                 type="number"
                 min="0"
@@ -15,6 +17,7 @@ const DiscountForm = ({ discount, setDiscount }) => {
                 onChange={event => setDiscount({ ...discount, value: event.target.value })}
             />
             <MyButton
+                className={classes.discountButton}
                 onClick={(event) => {
                     event.preventDefault();
                     if (discount.value > 0 && discount.value <= 100) {

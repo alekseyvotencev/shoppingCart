@@ -1,6 +1,6 @@
 import React from 'react'
 import MyButton from '../UI/button/MyButton';
-import classes from './Statistic.module.css'
+import classes from './modules/Statistic.module.css'
 
 const Statistic = ({ products, title, setVisible, discount }) => {
 
@@ -26,7 +26,7 @@ const Statistic = ({ products, title, setVisible, discount }) => {
             <div className={classes.statistic}>
                 <h4 className={classes.statisticTitle}>{title}</h4>
                 <p className={classes.statisticCount}>Количество добавленных в данный момент товаров: {products.length}</p>
-                <p className={classes.statisticPrice}>Цена текущего списка товаров: <span className={classes.oldPrice}>{totalPrice}</span> {totalDiscounted} рублей</p>
+                <p className={classes.statisticPrice}>Цена текущего списка товаров: <span className={classes.oldPrice}>{totalPrice}</span> {totalDiscounted.toFixed(2)} &#8381;</p>
                 <MyButton onClick={closeModal}>Закрыть</MyButton>
             </div>
         )
@@ -36,7 +36,7 @@ const Statistic = ({ products, title, setVisible, discount }) => {
         <div className={classes.statistic}>
             <h4 className={classes.statisticTitle}>{title}</h4>
             <p className={classes.statisticCount}>Количество добавленных в данный момент товаров: {products.length}</p>
-            <p className={classes.statisticPrice}>Цена текущего списка товаров: {totalPrice} рублей</p>
+            <p className={classes.statisticPrice}>Цена текущего списка товаров: {totalPrice} &#8381;</p>
             <MyButton onClick={closeModal}>Закрыть</MyButton>
         </div>
     )
