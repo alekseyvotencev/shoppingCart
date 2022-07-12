@@ -2,28 +2,28 @@ import React from 'react';
 import MyButton from '../UI/button/MyButton';
 import classes from './modules/ProductItem.module.css';
 
-const ProductItem = (props) => {
+const ProductItem = ({ remove, product, discount }) => {
 
-    if (props.discount.isSet) {
+    if (discount.isSet) {
         return (
             <div className={classes.myProduct}>
                 <div className={classes.myProductId}>
-                    {props.product.id}
+                    {product.id}
                 </div>
                 <div className={classes.myProductName}>
-                    {props.product.name}
+                    {product.name}
                 </div>
                 <div className={classes.myProductPrice}>
                     <span className={classes.oldPrice}>
-                        {props.product.price} р.;
+                        {product.price} р.;
                     </span>
                     <span className={classes.discountedPrice}>
-                        {(props.product.price * (1 - props.discount.value / 100)).toFixed(2)} р.
+                        {(product.price * (1 - discount.value / 100)).toFixed(2)} р.
                     </span>
                 </div>
                 <div className={classes.myProductButton}>
                     <MyButton
-                        onClick={() => props.remove(props.product)}>
+                        onClick={() => remove(product)}>
                         Удалить
                     </MyButton>
                 </div>
@@ -34,19 +34,19 @@ const ProductItem = (props) => {
     return (
         <div className={classes.myProduct}>
             <div className={classes.myProductId}>
-                {props.product.id}
+                {product.id}
             </div>
             <div className={classes.myProductName}>
-                {props.product.name}
+                {product.name}
             </div>
             <div className={classes.myProductPrice}>
                 <span>
-                    {props.product.price} р.
+                    {product.price} р.
                 </span>
             </div>
             <div className={classes.myProductButton}>
                 <MyButton
-                    onClick={() => props.remove(props.product)}>
+                    onClick={() => remove(product)}>
                     Удалить
                 </MyButton>
             </div>

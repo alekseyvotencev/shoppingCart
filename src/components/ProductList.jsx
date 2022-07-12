@@ -12,7 +12,6 @@ const ProductList = ({ products, title, remove, discount }) => {
                     Список пуст!
                 </h1>
                 <img src={empty} alt="Поиск не дал результатов" className={classes.empty} />
-
             </div>
         )
     }
