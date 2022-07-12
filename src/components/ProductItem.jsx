@@ -4,7 +4,8 @@ import classes from './ProductItem.module.css'
 
 const ProductItem = (props) => {
 
-    if (props.product.discountedPrice) {
+    if (props.discount.isSet) {
+        console.log('скидка')
         return (
             <div className={classes.myProduct}>
                 <div className={classes.myProductId}>
@@ -18,7 +19,7 @@ const ProductItem = (props) => {
                         {props.product.price} рублей
                     </span>
                     <span className={classes.discountedPrice}>
-                        {props.product.discountedPrice} рублей
+                        {props.product.price * (1 - props.discount.value / 100)} рублей
                     </span>
                 </div>
                 <div className={classes.myProductButton}>

@@ -2,7 +2,7 @@ import React from 'react'
 import ProductItem from './ProductItem'
 import classes from './ProductList.module.css';
 
-const ProductList = ({ products, title, remove }) => {
+const ProductList = ({ products, title, remove, discount }) => {
 
     if (!products.length) {
         return (
@@ -31,7 +31,7 @@ const ProductList = ({ products, title, remove }) => {
             </div>
             <div className={classes.productsTable}>
                 {products.map(product =>
-                    <ProductItem remove={remove} product={product} key={product.id} />
+                    <ProductItem remove={remove} product={product} key={product.id} discount={discount}/>
                 )}
             </div>
         </div>

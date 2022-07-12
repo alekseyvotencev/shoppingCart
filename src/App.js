@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import './styles/App.css';
 import ProductList from "./components/ProductList";
 import ProductForm from "./components/ProductForm";
@@ -14,6 +14,7 @@ function App() {
   const [products, setProducts] = useState(productList);
   const [modalNewProduct, setModalNewProduct] = useState(false);
   const [modalStatistic, setModalStatistic] = useState(false);
+  const [discount, setDiscount] = useState({ value: '', isSet: false });
 
   const createProduct = (newProduct) => {
     setProducts([...products, newProduct]);
@@ -28,22 +29,12 @@ function App() {
     localStorage.setItem('productList', JSON.stringify(result));
   }
 
-  const applyDiscount = (discount) => {
-    const discountedProducts = products.map((item) => (
-      { ...item, discountedPrice: (item.price * (1 - discount / 100)).toFixed(2) }))
-    setProducts(discountedProducts);
-  }
-
-  const cancelDiscount = () => {
-    setProducts(products);
-  }
-
   return (
     <div className="App">
       <div className="header">
         <div className="container">
           <img src={logo} alt="Логотип" className="header__logo" />
-          <DiscountForm apply={applyDiscount} cancel={cancelDiscount} />
+          <DiscountForm discount={discount} setDiscount={setDiscount} />
           <MyButton onClick={() => setModalNewProduct(true)} className="header__button">
             Добавить товар
           </MyButton>
@@ -56,10 +47,10 @@ function App() {
         <ProductForm create={createProduct} />
       </MyModal>
       <MyModal visible={modalStatistic} setVisible={setModalStatistic}>
-        <Statistic products={products} title="Статистика" setVisible={setModalStatistic} />
+        <Statistic products={products} title="Статистика" setVisible={setModalStatistic} discount={discount} />
       </MyModal>
       <div className="container">
-        <ProductList remove={removeProduct} products={products} title="Список товаров" />
+        <ProductList remove={removeProduct} products={products} title="Список товаров" discount={discount} />
       </div>
     </div>
   );
